@@ -1,8 +1,8 @@
 import os
 import sys
-from PIL import Image, ImageDraw, ImageFont
 import ctypes
 import time
+from PIL import Image, ImageDraw, ImageFont
 
 # Get path to temporary directory where files are extracted
 if getattr(sys, 'frozen', False):
@@ -79,5 +79,5 @@ if __name__ == "__main__":
         # Set the image as desktop wallpaper
         set_wallpaper(os.path.join(app_dir, "wallpaper.png"))
 
-        # Update every minute
+        # Update every 30s
         time.sleep(30)
