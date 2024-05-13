@@ -27,6 +27,37 @@ This Python script allows you to create a custom wallpaper with text and a clock
    - If you want to run it as a background process without a console window, execute `pythonw wallpaper_text_time.pyw`.
 6. Your wallpaper will be updated with the specified text and clock display. Enjoy your personalized wallpaper!
 
+
+## Usage on Windows Startup
+
+You can configure the script to run automatically when your Windows system starts up by creating a shortcut to the compiled executable file (.exe) and placing it in the Startup folder. Here's how to do it:
+
+1. **Compile the Script:**
+   - Use PyInstaller to convert the Python script (`wallpaper_text_time.pyw`) into a standalone executable (.exe) file.
+   - Run the following command in the terminal:
+     ```
+     pyinstaller --onefile wallpaper_text_time.pyw
+     ```
+   - This will create a `dist` directory containing the compiled executable file (`wallpaper_text_time.exe`).
+
+2. **Create Shortcut:**
+   - Navigate to the `dist` directory where the compiled executable is located.
+   - Right-click on `wallpaper_text_time.exe` and select "Create shortcut".
+   - Move the shortcut to a location where it will be easily accessible, such as the desktop.
+
+3. **Access Startup Folder:**
+   - Press `Win + R` to open the "Run" dialog box.
+   - Type `shell:startup` and press Enter. This will open the Startup folder.
+
+4. **Add Shortcut to Startup:**
+   - Copy the shortcut (`wallpaper_text_time.exe`) that you created earlier.
+   - Paste the shortcut into the Startup folder.
+   - The script will now run automatically each time you start your Windows system.
+
+Now, whenever you boot up your Windows computer, the script will automatically run in the background, updating your desktop wallpaper with the custom text and clock display.
+
+**Note:** Ensure that the Python environment and required libraries are available on your system for the script to execute successfully.
+
 ## Note
 
 - This script is designed to run on Windows systems due to its dependency on ctypes for setting the wallpaper. It may require modifications to work on other operating systems.
