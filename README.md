@@ -27,7 +27,6 @@ This Python script allows you to create a custom wallpaper with text and a clock
    - If you want to run it as a background process without a console window, execute `pythonw wallpaper_text_time.pyw`.
 6. Your wallpaper will be updated with the specified text and clock display. Enjoy your personalized wallpaper!
 
-
 ## Usage on Windows Startup
 
 You can configure the script to run automatically when your Windows system starts up by creating a shortcut to the compiled executable file (.exe) and placing it in the Startup folder. Here's how to do it:
@@ -36,7 +35,7 @@ You can configure the script to run automatically when your Windows system start
    - Use PyInstaller to convert the Python script (`wallpaper_text_time.pyw`) into a standalone executable (.exe) file.
    - Run the following command in the terminal:
      ```
-     pyinstaller --onefile wallpaper_text_time.pyw
+     pyinstaller --onefile --add-data "distress.otf;." --add-data "wallpaper.png;." wallpaper_text_time.py
      ```
    - This will create a `dist` directory containing the compiled executable file (`wallpaper_text_time.exe`).
 
@@ -57,7 +56,3 @@ You can configure the script to run automatically when your Windows system start
 Now, whenever you boot up your Windows computer, the script will automatically run in the background, updating your desktop wallpaper with the custom text and clock display.
 
 **Note:** Ensure that the Python environment and required libraries are available on your system for the script to execute successfully.
-
-## Note
-
-- This script is designed to run on Windows systems due to its dependency on ctypes for setting the wallpaper. It may require modifications to work on other operating systems.
