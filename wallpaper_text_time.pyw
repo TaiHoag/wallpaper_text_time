@@ -1,13 +1,26 @@
+import os
+import sys
 from PIL import Image, ImageDraw, ImageFont
 import ctypes
 import time
+
+# Get path to temporary directory where files are extracted
+if getattr(sys, 'frozen', False):
+    # Running as compiled
+    app_dir = sys._MEIPASS
+else:
+    # Running as script
+    app_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Function to create an image with text and clock
 def create_wallpaper(text, font_size=200, font_path=None, image_size=(1920, 1080), text_color=(255, 255, 255), background_color=(0, 0, 0)):
     # Create a new image with the specified size and background color
     image = Image.new('RGB', image_size, color=background_color)
 
-    font_path = r"fullpath/to/your/font/distress.otf"
+    # Construct full paths for font and image
+    font_path = os.path.join(app_dir, "distress.otf")
+    image_path = os.path.join(app_dir, "wallpaper.png")
+
     font = ImageFont.truetype(font_path, font_size)
 
     # Get a drawing context
@@ -50,7 +63,7 @@ def create_wallpaper(text, font_size=200, font_path=None, image_size=(1920, 1080
 # Function to set image as desktop wallpaper (works on Windows)
 def set_wallpaper(image_path):
     SPI_SETDESKWALLPAPER = 20
-    ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, "fullpath/to/your/wallpaper.png", 3)
+    ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, image_path, 3)
 
 if __name__ == "__main__":
     # Your text to be displayed on the wallpaper
@@ -61,10 +74,10 @@ if __name__ == "__main__":
         wallpaper_image = create_wallpaper(text_to_display)
 
         # Save the image to a file
-        wallpaper_image.save("fullpath/to/your/wallpaper.png")
+        wallpaper_image.save(os.path.join(app_dir, "wallpaper.png"))
 
         # Set the image as desktop wallpaper
-        set_wallpaper("fullpath/to/your/wallpaper.png")
+        set_wallpaper(os.path.join(app_dir, "wallpaper.png"))
 
-        # Update every 30s
+        # Update every minute
         time.sleep(30)
