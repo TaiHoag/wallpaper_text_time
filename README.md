@@ -35,7 +35,7 @@ You can configure the script to run automatically when your Windows system start
    - Use PyInstaller to convert the Python script (`wallpaper_text_time.pyw`) into a standalone executable (.exe) file.
    - Run the following command in the terminal:
      ```
-     pyinstaller --onefile --add-data "distress.otf;." --add-data "wallpaper.png;." wallpaper_text_time.py
+     pyinstaller --onefile --add-data "distress.otf;." --add-data "wallpaper.png;." wallpaper_text_time.pyw
      ```
    - This will create a `dist` directory containing the compiled executable file (`wallpaper_text_time.exe`).
 

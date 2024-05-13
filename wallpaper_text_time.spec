@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['wallpaper_text_time.py'],
+    ['wallpaper_text_time.pyw'],
     pathex=[],
     binaries=[],
     datas=[('distress.otf', '.'), ('wallpaper.png', '.')],
@@ -28,7 +28,7 @@ exe = EXE(
     upx=True,
     upx_exclude=[],
     runtime_tmpdir=None,
-    console=True,
+    console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
