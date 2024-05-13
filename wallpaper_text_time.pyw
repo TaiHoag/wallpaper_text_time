@@ -66,5 +66,5 @@ if __name__ == "__main__":
         # Set the image as desktop wallpaper
         set_wallpaper("fullpath/to/your/wallpaper.png")
 
-        # Update every minute
+        # Update every 30s
         time.sleep(30)
