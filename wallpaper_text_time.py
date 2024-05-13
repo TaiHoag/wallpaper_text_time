@@ -7,7 +7,7 @@ def create_wallpaper(text, font_size=200, font_path=None, image_size=(1920, 1080
     # Create a new image with the specified size and background color
     image = Image.new('RGB', image_size, color=background_color)
 
-    font_path = "font/distress.otf"
+    font_path = "fullpath/to/your/distress.otf"
     font = ImageFont.truetype(font_path, font_size)
 
     # Get a drawing context
@@ -50,7 +50,7 @@ def create_wallpaper(text, font_size=200, font_path=None, image_size=(1920, 1080
 # Function to set image as desktop wallpaper (works on Windows)
 def set_wallpaper(image_path):
     SPI_SETDESKWALLPAPER = 20
-    ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, r"E:\Code\PyPrj\DesktopApp\wallpaper.png", 3)
+    ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, r"fullpath/to/your/wallpaper.png", 3)
 
 if __name__ == "__main__":
     # Your text to be displayed on the wallpaper
@@ -61,10 +61,10 @@ if __name__ == "__main__":
         wallpaper_image = create_wallpaper(text_to_display)
 
         # Save the image to a file
-        wallpaper_image.save("wallpaper.png")
+        wallpaper_image.save("fullpath/to/your/wallpaper.png")
 
         # Set the image as desktop wallpaper
-        set_wallpaper("wallpaper.png")
+        set_wallpaper("fullpath/to/your/wallpaper.png")
 
-        # Update every minute
+        # Update every m30secs
         time.sleep(30)
