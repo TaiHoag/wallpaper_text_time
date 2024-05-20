@@ -1,0 +1,11 @@
+{
+    "text": "try and try harder",
+    "font_size": 200,
+    "font_path": "distress.otf",
+    "image_size": [1920, 1080],
+    "text_color": [255, 255, 255],
+    "background_color": [0, 0, 0],
+    "clock_font_size": 100,
+    "date_font_size": 60,
+    "clock_position": [50, 50]
+}
