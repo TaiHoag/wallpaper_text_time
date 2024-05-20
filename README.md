@@ -73,5 +73,9 @@ Edit the `config.json` file to customize the wallpaper. Here is an example confi
     "date_font_size": 60,
     "clock_position": [50, 50]
 }
+```
 
-**Note:** Ensure that the Python environment and required libraries are available on your system for the script to execute successfully.
+## Note
+
+-  Ensure that the Python environment and required libraries are available on your system for the script to execute successfully.
+-  If you wan to test or install new config, remember to end task (Using Task Manager) of the on-going scripts (for .pyw) or `ctrl + C` in the terminal (for .py)
