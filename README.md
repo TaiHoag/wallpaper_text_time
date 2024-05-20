@@ -12,7 +12,9 @@ This Python script allows you to create a custom wallpaper with text and a clock
 ## Requirements
 
 - Python 3.x
-- PIL (Python Imaging Library)
+- [Pillow](https://python-pillow.org/) library for image manipulation
+- `ctypes` library (part of the Python standard library)
+- A valid .otf font file
 
 ## Usage
 
@@ -54,5 +56,22 @@ You can configure the script to run automatically when your Windows system start
    - The script will now run automatically each time you start your Windows system.
 
 Now, whenever you boot up your Windows computer, the script will automatically run in the background, updating your desktop wallpaper with the custom text and clock display.
+
+## Configuration
+
+Edit the `config.json` file to customize the wallpaper. Here is an example configuration:
+
+```json
+{
+    "text": "just do it",
+    "font_size": 200,
+    "font_path": "distress.otf",
+    "image_size": [1920, 1080],
+    "text_color": [255, 255, 255],
+    "background_color": [0, 0, 0],
+    "clock_font_size": 100,
+    "date_font_size": 60,
+    "clock_position": [50, 50]
+}
 
 **Note:** Ensure that the Python environment and required libraries are available on your system for the script to execute successfully.
