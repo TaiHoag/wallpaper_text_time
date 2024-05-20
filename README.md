@@ -22,7 +22,7 @@ This Python script allows you to create a custom wallpaper with text and a clock
 2. Install the required PIL library by running `pip install pillow`.
 3. Clone or download this repository to your local machine.
 4. Customize the script:
-   - Optionally, change the `text_to_display` variable in the `__main__` block to your desired text.
+   - Optionally, change the `text_to_display` variable in the `__main__` block to your desired text (only in .py, for .pyw, update the `config.json`).
    - Adjust the font size, font path, text color, background color, etc., as needed in the `create_wallpaper()` function.
 5. Run the script:
    - If you want to run it in the console, execute `python wallpaper_text_time.py`.
@@ -37,7 +37,7 @@ You can configure the script to run automatically when your Windows system start
    - Use PyInstaller to convert the Python script (`wallpaper_text_time.pyw`) into a standalone executable (.exe) file.
    - Run the following command in the terminal:
      ```
-     pyinstaller --onefile --add-data "distress.otf;." --add-data "wallpaper.png;." wallpaper_text_time.pyw
+     pyinstaller --onefile --add-data "distress.otf;." --add-data "wallpaper.png;." --add-data "config.json;." wallpaper_text_time.pyw
      ```
    - This will create a `dist` directory containing the compiled executable file (`wallpaper_text_time.exe`).
 
